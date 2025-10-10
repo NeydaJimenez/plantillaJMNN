@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="mb-4 text" style="color: #1155ba;">Las 7 Maravillas del Mundo Moderno</h1>
+
+<div class="text-center mb-4">
+    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@geografiandooficial/video/7390072969554414854" data-video-id="7390072969554414854" data-embed-from="oembed" style="max-width: 605px; min-width: 325px;">
+        <section>
+            <a target="_blank" title="@geografiandooficial" href="https://www.tiktok.com/@geografiandooficial?refer=embed">@geografiandooficial</a>
+            <a target="_blank" title="♬ Música original" href="https://www.tiktok.com/music/original-sound-7390072969554414854?refer=embed">♬ Mú sica original</a>
+        </section>
+    </blockquote>
+    <script async src="https://www.tiktok.com/embed.js"></script>
+</div>
+
+
+<p class="lead text-center">Estas estructuras y monumentos son testimonio de la creatividad, el ingenio y la grandeza de la humanidad a lo largo de los siglos.</p>
+
+<div class="row g-4 mt-3">
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 bg-light shadow-sm text-center">
+            <img src="{{ url_for('static', filename='img/Chichen Itza.jpg') }}" class="card-img-top mx-auto mt-3" alt="Chichén Itzá" style="width: 250px; height: 250px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Chichén Itzá (México)</strong></h5>
+                <p>Un antiguo centro ceremonial maya en la península de Yucatán.</p>
+                <p>Destaca la Pirámide de Kukulkán, un calendario solar de piedra que refleja la avanzada astronomía y arquitectura de la civilización maya.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 bg-light shadow-sm text-center">
+            <img src="{{ url_for('static', filename='img/Cristo Redentor.jpg') }}" class="card-img-top mx-auto mt-3" alt="Cristo Redentor" style="width: 200px; height: 250px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Cristo Redentor (Brasil)</strong></h5>
+                <p>La emblemática estatua que corona el cerro del Corcovado en Río de Janeiro.</p>
+                <p>Construida en 1931, simboliza la paz y la fe, siendo uno de los monumentos más reconocidos del mundo.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 bg-light shadow-sm text-center">
+            <img src="{{ url_for('static', filename='img/Machu.jpg') }}" class="card-img-top mx-auto mt-3" alt="Machu Picchu" style="width: 250px; height: 250px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Machu Picchu (Perú)</strong></h5>
+                <p>Una ciudadela inca enclavada en los Andes peruanos.</p>
+                <p>Descubierta en 1911, es un símbolo del ingenio y la espiritualidad de la civilización incaica.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 bg-light shadow-sm text-center">
+            <img src="{{ url_for('static', filename='img/Muralla China.jpg') }}" class="card-img-top mx-auto mt-3" alt="Muralla China" style="width: 250px; height: 250px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>La Gran Muralla China (China)</strong></h5>
+                <p>Una obra monumental de defensa construida a lo largo de siglos.</p>
+                <p>Con más de 21,000 km, es símbolo del esfuerzo humano y la historia milenaria de China.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 bg-light shadow-sm text-center">
+            <img src="{{ url_for('static', filename='img/Petra.jpg') }}" class="card-img-top mx-auto mt-3" alt="Petra" style="width: 250px; height: 250px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Petra (Jordania)</strong></h5>
+                <p>Una ciudad esculpida en roca rosada por los nabateos.</p>
+                <p>Conocida como la “ciudad perdida”, su tesoro tallado en piedra es uno de los paisajes más espectaculares del mundo antiguo.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 bg-light shadow-sm text-center">
+            <img src="{{ url_for('static', filename='img/Coliseo Romano.jpg') }}" class="card-img-top mx-auto mt-3" alt="Coliseo Romano" style="width: 250px; height: 250px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Coliseo Romano (Italia)</strong></h5>
+                <p>El anfiteatro más grande del Imperio Romano.</p>
+                <p>Construido en el siglo I, albergó espectáculos y combates de gladiadores ante miles de espectadores.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center mt-3">
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 bg-light shadow-sm text-center">
+            <img src="{{ url_for('static', filename='img/Taj Mahal.jpg') }}" class="card-img-top mx-auto mt-3" alt="Taj Mahal" style="width: 250px; height: 250px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Taj Mahal (India)</strong></h5>
+                <p>Un mausoleo de mármol blanco en la ciudad de Agra.</p>
+                <p>Construido por el emperador Shah Jahan en honor a su esposa Mumtaz Mahal, es un símbolo eterno del amor.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

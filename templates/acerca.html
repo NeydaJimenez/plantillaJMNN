@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-sm bg-light mx-auto" style="max-width: 600px;">
+        <div class="card-body text-center">
+            <img src="{{ url_for('static', filename='img/NNJM.jpeg') }}" 
+                 alt="JMNN" class="mb-3" style="width: 180px; height: 180px; object-fit: cover; display: block; margin: 0 auto;">
+            
+            <h2 class="card-title mb-3" style="color: #1155ba;">Sobre mí</h2>
+            
+            <p class="card-text"><strong>Nombre:</strong> Neyda Nahomi Jimenez Martinez</p>
+            <p class="card-text"><strong>Edad:</strong> 16 años (Naci el 24-11-2008)</p>
+            
+            <p class="card-text"><strong>Características:</strong> Creativa, dormilona, amable.</p>
+            
+            <p class="card-text"><strong>Meta futura:</strong> Obtener mi título universitario, estabilidad económica y construir mi futuro luchando por él.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-4" style="color: #1155ba;">Mundo Animal</h1>
+
+<div class="text-center mb-4">
+    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@jellyfishworld_/video/7501738173735783702" data-video-id="7501738173735783702" data-embed-from="oembed" style="max-width: 605px; min-width: 325px;">
+        <section>
+            <a target="_blank" title="@jellyfishworld_" href="https://www.tiktok.com/@jellyfishworld_?refer=embed">@jellyfishworld_</a>
+            <a target="_blank" title="♬ Música original" href="https://www.tiktok.com/music/original-sound-7501738173735783702?refer=embed">♬ Música original</a>
+        </section>
+    </blockquote>
+    <script async src="https://www.tiktok.com/embed.js"></script>
+</div>
+
+<h3 class="mt-4">Acuáticos</h3>
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 bg-light shadow-sm">
+            <img src="{{ url_for('static', filename='img/AE marino1.jpg') }}" class="card-img-top mx-auto mt-3" alt="Octopus Vulgaris" style="width: 150px;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Octopus Vulgaris</strong></h5>
+                <ul>
+                    <li>Tienen ocho brazos con ventosas.</li>
+                    <li>Cuentan con una inteligencia muy desarrollada.</li>
+                    <li>Poseen cromatóforos en la piel, para camuflarse o comunicarse.</li>
+                    <li>Tienen un cuerpo blando y sin esqueleto.</li>
+                    <li>Carnívoros, se alimentan de crustáceos, peces pequeños y otros invertebrados.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 bg-light shadow-sm">
+            <img src="{{ url_for('static', filename='img/AE marino2.jpg') }}" class="card-img-top mx-auto mt-3" alt="Medusa" style="width: 180px;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Medusa</strong></h5>
+                <ul>
+                    <li>Cuerpo en forma de campana o paraguas, gelatinoso y transparente.</li>
+                    <li>Tentáculos con cnidocitos que utilizan para atrapar presas o defenderse.</li>
+                    <li>Se mueven mediante contracciones rítmicas de su cuerpo.</li>
+                    <li>Pueden tener colores brillantes, como en la imagen.</li>
+                    <li>Se alimenta de plancton, peces pequeños, huevos y larvas marinas.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 class="mt-4">Terrestres</h3>
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 bg-light shadow-sm">
+            <img src="{{ url_for('static', filename='img/AE terrestre1.jpg') }}" class="card-img-top mx-auto mt-3" alt="Mustela Erminea" style="width: 180px;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Mustela Erminea</strong></h5>
+                <ul>
+                    <li>Es un pequeño mamífero familia de las comadrejas, tejones y nutrias.</li>
+                    <li>Su pelaje cambia según las estaciones.</li>
+                    <li>A pesar de su tamaño, es un depredador ágil y agresivo.</li>
+                    <li>Se encuentran en zonas árticas y subárticas.</li>
+                    <li>Se alimenta principalmente de roedores, aves, insectos, etc.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 bg-light shadow-sm">
+            <img src="{{ url_for('static', filename='img/AE terrestre2.jpg') }}" class="card-img-top mx-auto mt-3" alt="Tigre de Bengala Blanco" style="width: 200px;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Tigre de Bengala Blanco</strong></h5>
+                <ul>
+                    <li>Lo blanco se debe a la causa de falta de pigmento.</li>
+                    <li>Tienen rayas negras o marrones sobre su pelaje.</li>
+                    <li>Es una de las especies más grandes.</li>
+                    <li>Habita en lugares como India, Nepal y Bután.</li>
+                    <li>Su dieta principalmente es carnívora.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 class="mt-4">Aéreos</h3>
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 bg-light shadow-sm">
+            <img src="{{ url_for('static', filename='img/AE aereo1.jpg') }}" class="card-img-top mx-auto mt-3" alt="Alcions" style="width: 200px;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Alcions</strong></h5>
+                <ul>
+                    <li>Habita en lagos y ríos de Europa.</li>
+                    <li>Se caracteriza por su plumaje de colores brillantes.</li>
+                    <li>Es un ave solitaria.</li>
+                    <li>Su dieta es principalmente de peces pequeños e invertebrados.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 bg-light shadow-sm">
+            <img src="{{ url_for('static', filename='img/AE aereo2.jpg') }}" class="card-img-top mx-auto mt-3" alt="Colibrí Escamoso" style="width: 180px;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Colibrí Escamoso</strong></h5>
+                <ul>
+                    <li>Especie de colibrí endémica.</li>
+                    <li>Se encuentra en bosques y áreas abiertas.</li>
+                    <li>Se alimentan de néctar de flores.</li>
+                    <li>El macho tiene un plumaje predominante verde con la garganta violeta y una banda blanca en el pecho.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

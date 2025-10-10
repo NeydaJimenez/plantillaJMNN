@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+  <div class="row text-center mb-4">
+    <h2 class="mb-4">Categorías</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <img src="{{ url_for('static', filename='img/animales.webp') }}" class="card-img-top" alt="Animales Exóticos">
+        <div class="card-body">
+          <h5 class="card-title">Animales Exóticos</h5>
+          <p class="card-text">Aprende sobre especies acuáticas, terrestres y aéreas sorprendentes.</p>
+          <a href="{{ url_for('animales') }}" class="btn btn-primary">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <img src="{{ url_for('static', filename='img/Vehi.webp') }}" class="card-img-top" alt="Vehículos Antiguos">
+        <div class="card-body">
+          <h5 class="card-title">Vehículos Antiguos</h5>
+          <p class="card-text">Descubre la historia y curiosidades de autos y motos clásicas.</p>
+          <a href="{{ url_for('vehiculos') }}" class="btn btn-primary">Ver más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <img src="{{ url_for('static', filename='img/7 maravillas.jpg') }}" class="card-img-top" alt="7 Maravillas del Mundo">
+        <div class="card-body">
+          <h5 class="card-title">7 Maravillas del Mundo</h5>
+          <p class="card-text">Explora los lugares más impresionantes y emblemáticos del planeta.</p>
+          <a href="{{ url_for('maravillas') }}" class="btn btn-primary">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

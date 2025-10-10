@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-4" style="color: #1155ba;">Vehículos Antiguos</h1>
+
+<div class="text-center mb-4">
+    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@motor_legacy_mty/video/7202370403338030342" data-video-id="7202370403338030342" data-embed-from="oembed" style="max-width: 605px; min-width: 325px;">
+        <section>
+            <a target="_blank" title="@motor_legacy_mty" href="https://www.tiktok.com/@motor_legacy_mty?refer=embed">@motor_legacy_mty</a>
+            <a target="_blank" title="♬ Música original" href="https://www.tiktok.com/music/original-sound-7202370403338030342?refer=embed">♬ Música original</a>
+        </section>
+    </blockquote>
+    <script async src="https://www.tiktok.com/embed.js"></script>
+</div>
+
+<div class="row g-4 mt-3">
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 bg-light shadow-sm text-center">
+            <img src="{{ url_for('static', filename='img/Ford.avif') }}" class="card-img-top mx-auto mt-3" alt="Ford Model T" style="width: 250px;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Ford Model T (1908)</strong></h5>
+                <p>El primer coche producido en masa.</p>
+                <p>Fue lanzado el 1 de octubre de ese año por Henry Ford como el primer automóvil asequible para las masas, motorizando al mundo y revolucionando la industria y el estilo de vida.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 bg-light shadow-sm text-center">
+            <img src="{{ url_for('static', filename='img/Rolls.webp') }}" class="card-img-top mx-auto mt-3" alt="Rolls Royce" style="width: 250px;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Rolls-Royce Silver Ghost (1907)</strong></h5>
+                <p>Un símbolo de lujo y elegancia.</p>
+                <p>Fue bautizado con el nombre de "Silver Ghost" (Fantasma Plateado) para destacar su funcionamiento excepcionalmente silencioso y su carrocería con acabados plateados.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 bg-light shadow-sm text-center">
+            <img src="{{ url_for('static', filename='img/Mercedes.jpg') }}" class="card-img-top mx-auto mt-3" alt="Mercedes-Benz 300 SL" style="width: 250px;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Mercedes-Benz 300 SL (1954)</strong></h5>
+                <p>Famoso por sus puertas de “ala de gaviota”.</p>
+                <p>Es un deportivo icónico que se presentó en el Salón de Nueva York de 1954 y se caracterizaba por sus puertas de apertura vertical, su primer motor con inyección directa de combustible y su chasis tubular ligero.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 bg-light shadow-sm text-center">
+            <img src="{{ url_for('static', filename='img/Volks.jpg') }}" class="card-img-top mx-auto mt-3" alt="Volkswagen Beetle" style="width: 300px;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Volkswagen Beetle (1938)</strong></h5>
+                <p>El clásico “Escarabajo”.</p>
+                <p>Fue el modelo inicial del icónico "coche del pueblo" alemán, encargado por Adolf Hitler y diseñado por Ferdinand Porsche para ser un vehículo accesible para el ciudadano promedio.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center mt-3">
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 bg-light shadow-sm text-center">
+            <img src="{{ url_for('static', filename='img/Chev.jpg') }}" class="card-img-top mx-auto mt-3" alt="Chevrolet Bel Air" style="width: 250px;">
+            <div class="card-body">
+                <h5 class="card-title"><strong>Chevrolet Bel Air (1957)</strong></h5>
+                <p>Un ícono del diseño americano.</p>
+                <p>Es un ícono de la cultura automotriz estadounidense, famoso por su estilo audaz, cromo distintivo y aletas traseras, lo que le valió el apodo de "Baby Cadillac". Perteneciente a la popular serie "Tri-Five" de Chevrolet.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
