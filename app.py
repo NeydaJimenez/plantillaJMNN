@@ -18,23 +18,6 @@ def vehiculos():
 def maravillas():
     return render_template('maravillas.html', title="Las Maravillas del Mundo")
 
-@app.route("/registrando", methods = ("GET", "POST"))
-def registrame():
-    error = None
-    if request.method == "POST":
-        nombreComleto = request.form["nombreCompleto"]
-        email = request.form["email"]
-        password = request.form['password']
-        confirmPassword = request.form['confirmPassword']
-        fechaNacimiento = request.form['fechaNacimiento']
-        genero = request.form['genero']
-    
-    return render_template('registro.html', title="Registrate")
-
-@app.route('/acerca')
-def acerca():
-    return render_template('acerca.html', title="Acerca de...")
-
 @app.route("/registrando", methods=("GET", "POST"))
 def registrame():
     error = None
@@ -52,6 +35,10 @@ def registrame():
             return render_template("registro_exitoso.html", nombre=nombreCompleto)
 
     return render_template("registrando.html", error=error, title="Registro")
+    
+@app.route('/acerca')
+def acerca():
+    return render_template('acerca.html', title="Acerca de...")
 
 if __name__ == '__main__':
     app.run(debug=True)
