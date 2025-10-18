@@ -7,8 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to right,rgb(231, 239, 255),rgb(231, 239, 255));
-            color: white;
+            background: linear-gradient(to right, #c6d8f9, #c6d8f9);
+            color: black;
             font-family: 'Poppins', sans-serif;
             height: 100vh;
             display: flex;
@@ -16,7 +16,7 @@
             align-items: center;
         }
         .card {
-            background-color: rgba(255,255,255,0.1);
+            background-color: rgba(255,255,255,0.9);
             border: none;
             border-radius: 20px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -24,18 +24,23 @@
             max-width: 500px;
         }
         label {
-            color: #000;
+            color: black;
         }
         .btn-custom {
-            background-color:rgb(0, 190, 57);
+            background-color: #0e8700;
             color: white;
             font-weight: bold;
         }
         .btn-custom:hover {
             background-color: #0072ff;
         }
-        .is-invalid {
-            border-color: #dc3545 !important;
+        .invalido {
+            border: 2px solid red !important;
+        }
+        .error-text {
+            color: red;
+            font-size: 0.9em;
+            display: none;
         }
         .invalid-feedback {
             display: block;
@@ -54,7 +59,7 @@
         </div>
         {% endif %}
 
-        <form id="registroForm" action="/registrando" method="POST">
+        <form action="/registrando" method="POST" onsubmit="return validarFormulario()">
             <div class="mb-3">
                 <label for="nombreCompleto" class="form-label">Nombre completo</label>
                 <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto" required>
@@ -64,7 +69,7 @@
             <div class="mb-3">
                 <label for="email" class="form-label">Correo electrónico</label>
                 <input type="email" class="form-control" id="email" name="email" required>
-                <div class="invalid-feedback">Por favor ingrese un correo válido.</div>
+                <div class="invalid-feedback">Este campo es obligatorio.</div>
             </div>
 
             <div class="mb-3">
@@ -76,13 +81,17 @@
             <div class="mb-3">
                 <label for="confirmPassword" class="form-label">Confirmar contraseña</label>
                 <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
-                <div class="invalid-feedback">Las contraseñas no coinciden.</div>
+                <div class="invalid-feedback">Este campo es obligatorio.</div>
+            </div>
+
+            <div id="mensajeError" class="text-danger mb-3" style="display:none;">
+                X Las contraseñas no coinciden.
             </div>
 
             <div class="mb-3">
                 <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
                 <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required>
-                <div class="invalid-feedback">Verifica que las contraseñas coincidan.</div>
+                <div class="invalid-feedback">Este campo es obligatorio.</div>
             </div>
 
             <div class="mb-3">
@@ -92,8 +101,9 @@
                     <option value="Femenino">Femenino</option>
                     <option value="Masculino">Masculino</option>
                     <option value="Otro">Otro</option>
+                    <option value="Prefiero no decirlo">Prefiero no decirlo</option>
                 </select>
-                <div class="invalid-feedback">Seleccione una opción.</div>
+                <div class="invalid-feedback">Este campo es obligatorio.</div>
             </div>
 
             <div class="d-grid">
@@ -103,33 +113,40 @@
     </div>
 
     <script>
-        document.getElementById('registroForm').addEventListener('submit', function(event) {
-            let formIsValid = true;
+        function validarFormulario() {
+            const campos = document.querySelectorAll('input, select');
+            let valido = true;
 
-            const inputs = this.querySelectorAll('input, select');
-            inputs.forEach(input => {
-                input.classList.remove('is-invalid');
+            campos.forEach(campo => {
+                campo.classList.remove('invalido');
+                const errorMsg = campo.parentElement.querySelector('.error-text');
+                if (errorMsg) errorMsg.style.display = 'none';
             });
 
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-
-            if (password !== confirmPassword) {
-                formIsValid = false;
-                document.getElementById('confirmPassword').classList.add('is-invalid');
-            }
-
-            inputs.forEach(input => {
-                if (!input.value) {
-                    formIsValid = false;
-                    input.classList.add('is-invalid');
+            campos.forEach(campo => {
+                if (!campo.value.trim()) {
+                    campo.classList.add('invalido');
+                    const errorMsg = campo.parentElement.querySelector('.error-text');
+                    if (errorMsg) errorMsg.style.display = 'block';
+                    valido = false;
                 }
             });
 
-            if (!formIsValid) {
-                event.preventDefault();
+            const pass1 = document.getElementById('password').value;
+            const pass2 = document.getElementById('confirmPassword').value;
+            const mensaje = document.getElementById('mensajeError');
+
+            if (pass1 !== pass2) {
+                mensaje.style.display = 'block';
+                document.getElementById('password').classList.add('invalido');
+                document.getElementById('confirmPassword').classList.add('invalido');
+                valido = false;
+            } else {
+                mensaje.style.display = 'none';
             }
-        });
+
+            return valido;
+        }
     </script>
 
 </body>
