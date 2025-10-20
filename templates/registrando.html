@@ -17,7 +17,7 @@
             flex-direction: column;
         }
         h1.titulo-principal {
-            color: purple; /* Morado */
+            color: purple;
             text-align: center;
             margin-bottom: 20px;
         }
@@ -41,7 +41,10 @@
             background-color: #0072ff;
         }
         .invalido {
-            border: 2px solid red !important;
+            border-color: red;
+        }
+        .invalido:focus {
+            box-shadow: 0 0 5px red;
         }
         .error-text {
             color: red;
@@ -67,7 +70,7 @@
         </div>
         {% endif %}
 
-        <form action="/registrando" method="POST" onsubmit="return validarFormulario()">
+        <form action="/registrando" method="POST" onsubmit="return validarFormulario(event)">
             <div class="mb-3">
                 <label for="nombreCompleto" class="form-label">Nombre completo</label>
                 <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto" required>
@@ -121,7 +124,7 @@
     </div>
 
     <script>
-        function validarFormulario() {
+        function validarFormulario(event) {
             const campos = document.querySelectorAll('input, select');
             let valido = true;
 
@@ -153,9 +156,14 @@
                 mensaje.style.display = 'none';
             }
 
+            if (!valido) {
+                event.preventDefault()
+            }
+
             return valido;
         }
     </script>
 
 </body>
 </html>
+
