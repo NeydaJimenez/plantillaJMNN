@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .auth-buttons {
+            margin: 20px 0;
+        }
+        .auth-buttons a {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 0 5px;
+        }
+        .auth-buttons a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-buttons" id="auth-buttons">
+        <!-- El contenido se mostrará dependiendo del estado de autenticación -->
+    </div>
+
+    <script>
+        window.onload = function() {
+            const isAuthenticated = sessionStorage.getItem("isAuthenticated");
+            const username = sessionStorage.getItem("username");
+            const authButtons = document.getElementById("auth-buttons");
+
+            if (isAuthenticated === "true") {
+                authButtons.innerHTML = `
+                    <span>Bienvenido, ${username}!</span>
+                    <a href="#" onclick="logout()">Cerrar Sesión</a>
+                `;
+            } else {
+                authButtons.innerHTML = `
+                    <a href="/login">Iniciar Sesión</a>
+                    <a href="/registro">Registro</a>
+                `;
+            }
+        };
+
+        function logout() {
+            sessionStorage.removeItem("isAuthenticated");
+            sessionStorage.removeItem("username");
+            window.location.href = "/"; // Redirigir a la página principal
+        }
+    </script>
+
+</body>
+</html>
