@@ -2,6 +2,17 @@
 {% block content %}
 
 <div class="container">
+  {% if session.get('usuario') %}
+    <div class="alert alert-success text-center mt-3">
+      👋 Bienvenido, <strong>{{ session['usuario'] }}</strong> — ¡Disfruta explorando nuestras categorías!
+    </div>
+  {% else %}
+    <div class="alert alert-info text-center mt-3">
+      Por favor, <a href="{{ url_for('login') }}" class="alert-link">inicia sesión</a> o 
+      <a href="{{ url_for('registro') }}" class="alert-link">regístrate</a> para acceder a más contenido.
+    </div>
+  {% endif %}
+
   <div class="row text-center mb-4">
     <h2 class="mb-4">Categorías</h2>
   </div>
@@ -16,6 +27,7 @@
         </div>
       </div>
     </div>
+
     <div class="col-md-4 mb-4">
       <div class="card h-100 shadow-sm">
         <img src="{{ url_for('static', filename='img/Vehi.webp') }}" class="card-img-top" alt="Vehículos Antiguos">
@@ -26,6 +38,7 @@
         </div>
       </div>
     </div>
+
     <div class="col-md-4 mb-4">
       <div class="card h-100 shadow-sm">
         <img src="{{ url_for('static', filename='img/7 maravillas.jpg') }}" class="card-img-top" alt="7 Maravillas del Mundo">

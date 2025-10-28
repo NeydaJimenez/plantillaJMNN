@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="text-center mt-12">
+  {% if usuario %}
+    <h1 class="text-3xl font-bold mb-4">Bienvenido, {{ usuario }} 👋</h1>
+    <p class="text-lg">Tu sesión está activa.</p>
+  {% else %}
+    <h1 class="text-3xl font-bold mb-4">Bienvenido a MiApp</h1>
+    <p class="text-lg">Por favor, inicia sesión para continuar.</p>
+  {% endif %}
+</div>
+
+{% endblock %}

@@ -9,30 +9,47 @@
 </head>
 <body>
     <header style="background: linear-gradient(90deg, #dc81af, #9272cf); color: rgb(255, 255, 255); text-align: center; padding: 10px 0; margin-bottom: 5px;">
-    <h1>Plantilla Base JMNN</h1>
+        <h1>Plantilla Base JMNN</h1>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary mb-2">
-    <div class="container">
-        <a class="navbar-brand" href="{{ url_for('inicio') }}">Inicio</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('inicio') }}">Inicio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav me-auto">
-            <li class="nav-item"><a class="nav-link" href="{{ url_for('animales') }}">Animales Exóticos</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url_for('vehiculos') }}">Vehículos Antiguos</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url_for('maravillas') }}">Las Maravillas del Mundo</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url_for('registro') }}">Registro</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url_for('acerca') }}">Acerca de...</a></li>
-        </ul>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('animales') }}">Animales Exóticos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('vehiculos') }}">Vehículos Antiguos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('maravillas') }}">Las Maravillas del Mundo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('acerca') }}">Acerca de...</a></li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    {% if session.get('usuario') %}
+                        <li class="nav-item">
+                            <span class="navbar-text text-white me-3">Hola, {{ session['usuario'] }}</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('logout') }}">Cerrar Sesión</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('login') }}">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('registro') }}">Registro</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
         </div>
-    </div>
     </nav>
 
     <main class="container mb-5">
-    {% block content %}{% endblock %}
+        {% block content %}{% endblock %}
     </main>
 
     <footer style="text-align: center; color: #000080;">
