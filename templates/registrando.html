@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REGISTRATE JMNN</title>
+    <title>REGÍSTRATE JMNN</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to right, #c6d8f9, #c6d8f9);
-            color: black;
+            background: linear-gradient(to right,rgb(232, 212, 255),rgb(233, 212, 255)); 
+            color: #222;
             font-family: 'Poppins', sans-serif;
             height: 100vh;
             display: flex;
@@ -16,41 +16,51 @@
             align-items: center;
             flex-direction: column;
         }
+
         h1.titulo-principal {
             color: purple;
             text-align: center;
             margin-bottom: 20px;
         }
+
         .card {
-            background-color: rgba(255,255,255,0.9);
+            background-color: #e0e0e0;
             border: none;
             border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             width: 100%;
             max-width: 500px;
         }
+
         label {
-            color: black;
+            color: #333;
         }
+
         .btn-custom {
-            background-color: #0e8700;
+            background-color:rgb(89, 5, 138);
             color: white;
             font-weight: bold;
+            border: none;
         }
+
         .btn-custom:hover {
             background-color: #0072ff;
         }
+
         .invalido {
             border-color: red;
         }
+
         .invalido:focus {
             box-shadow: 0 0 5px red;
         }
+
         .error-text {
             color: red;
             font-size: 0.9em;
             display: none;
         }
+
         .invalid-feedback {
             display: block;
             color: #dc3545;
@@ -156,7 +166,7 @@
             }
 
             if (!valido) {
-                event.preventDefault()
+                event.preventDefault();
             }
 
             return valido;
@@ -165,4 +175,3 @@
 
 </body>
 </html>
-
